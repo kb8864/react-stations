@@ -7,6 +7,8 @@ import './App.css'
  */
 export const App = () => {
   const appName = "Dogアプリ";
+  const description = " 犬の画像を表示するサイトです";
+  const dogImageUrl = "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg";
 
   return (
     <>
@@ -16,7 +18,8 @@ export const App = () => {
         </div>
     </header>
     <main className = "container">
-      <p>Dogアプリ</p>
+      <p>{description}</p>
+      <img src="dogImageUrl" alt="表示する犬の写真" />
     </main>
     </>
   )

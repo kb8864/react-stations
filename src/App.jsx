@@ -1,6 +1,7 @@
 // DO NOT DELETE
 
 import './App.css'
+import { useState } from "react";
 
 /**
  * @type {() => JSX.Element}
@@ -8,7 +9,8 @@ import './App.css'
 export const App = () => {
   const appName = "Dogアプリ";
   const description = " 犬の画像を表示するサイトです";
-  const dogImageUrl = "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg";
+  // const dogImageUrl = "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg";
+  const [dogUrl, setDogUrl] = useState("https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg");
 
   return (
     <>
@@ -19,7 +21,7 @@ export const App = () => {
     </header>
     <main className = "container">
       <p>{description}</p>
-      <img src="dogImageUrl" alt="表示する犬の写真" />
+      <img src={dogUrl} alt="表示する犬の写真" />
     </main>
     </>
   )

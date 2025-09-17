@@ -12,6 +12,7 @@ export const App = () => {
   // const dogImageUrl = "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg";
   const [dogUrl, setDogUrl] = useState("https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg");
 
+
   return (
     <>
       <header className="app-header">
@@ -22,7 +23,13 @@ export const App = () => {
     <main className = "container">
       <p>{description}</p>
       <img src={dogUrl} alt="表示する犬の写真" />
+
+      {/* ボタン追加 */}
+      <button onClick={() => setDogUrl('https://images.dog.ceo/breeds/hound-english/n02089973_1132.jpg')}>更新</button>
     </main>
     </>
+
+    
   )
 }
+

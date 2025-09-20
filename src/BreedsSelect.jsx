@@ -12,6 +12,7 @@ export const BreedsSelect = ({breeds,value, onChange}) => {
         <option value="" disabled>Select</option>
       {breeds.map(b => (<option key= {b} value={b}>{b}</option>))}
       </select>
+      <button type="button">表示</button>
   </>
 }
 

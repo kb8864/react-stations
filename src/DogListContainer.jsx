@@ -1,9 +1,13 @@
 // @ts-check
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {BreedsSelect} from './BreedsSelect.jsx';
+
+
 
 export const DogListContainer = () => {
   const [breeds, setBreeds] = useState([])
+  const [selectedBreed,  setSelectedBreed]= useState('')
 
   useEffect(() =>{
     const loadBreeds = async () =>{
@@ -20,13 +24,8 @@ export const DogListContainer = () => {
 
   return(
     <div className='container'>
-      <label htmlFor="breedSelect">BleedsList</label>{''}
-      <select id="breedSelect" defaultValue=""> 
-        <option value="" disabled></option>
-        {breeds.map(b => (<option key= {b} value={b}>{b}</option>
-      ))}
-      </select>
-      
+      <BreedsSelect breeds={breeds} value={selectedBreed} onChange={setSelectedBreed}>
+      </BreedsSelect>
     </div>
   )
 

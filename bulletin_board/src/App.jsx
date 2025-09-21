@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { fetchThreads } from "./lib/api";
+<<<<<<< HEAD
+=======
+import { useEffect } from 'react';
+>>>>>>> 3d9ee87 (APIから取得したスレッドを一覧表示するため、App.jsx 側で useEffect で fetchThreads() を呼び出して threads に反映する処理を追加)
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -46,10 +50,15 @@ function Header() {
     )
   }
 
-
 export default function app() {
-   const [threads, setThreads] = useState([]);
+    const [threads, setThreads] = useState([]);
 
+    useEffect(() => {
+      (async() =>{
+        const data = await fetchThreads();
+        setThreads(data);
+      })()
+    },[])
 
 return(
   <div className="app">
